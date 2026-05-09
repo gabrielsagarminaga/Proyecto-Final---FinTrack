@@ -1,0 +1,100 @@
+from datetime import date
+
+from src.operations import (
+    agregar_movimiento,
+    mostrar_movimientos,
+    calcular_balance,
+    filtrar_por_categoria
+)
+
+from src.utils import (
+    pedir_float,
+    pedir_texto
+)
+
+def menu():
+
+    while True:
+
+        print("\n===== FINTRACK =====")
+        print("1. Agregar ingreso")
+        print("2. Agregar gasto")
+        print("3. Ver movimientos")
+        print("4. Ver balance")
+        print("5. Filtrar por categoría")
+        print("6. Salir")
+
+        opcion = input("Seleccione una opción: ")
+
+        if opcion == "1":
+
+            monto = pedir_float("Monto: ")
+            categoria = pedir_texto("Categoría: ")
+            descripcion = pedir_texto("Descripción: ")
+
+            agregar_movimiento(
+                "ingreso",
+                monto,
+                categoria,
+                descripcion,
+                str(date.today())
+            )
+
+            print("Ingreso agregado correctamente.")
+
+        elif opcion == "2":
+
+            monto = pedir_float("Monto: ")
+            categoria = pedir_texto("Categoría: ")
+            descripcion = pedir_texto("Descripción: ")
+
+            agregar_movimiento(
+                "gasto",
+                monto,
+                categoria,
+                descripcion,
+                str(date.today())
+            )
+
+            print("Gasto agregado correctamente.")
+
+        elif opcion == "3":
+
+            movimientos = mostrar_movimientos()
+
+            if not movimientos:
+                print("No hay movimientos registrados.")
+
+            else:
+                for movimiento in movimientos:
+                    print(movimiento)
+
+        elif opcion == "4":
+
+            balance = calcular_balance()
+
+            print(f"Balance actual: Q{balance:.2f}")
+
+        elif opcion == "5":
+
+            categoria = pedir_texto("Categoría a buscar: ")
+
+            resultados = filtrar_por_categoria(categoria)
+
+            if not resultados:
+                print("No se encontraron movimientos.")
+
+            else:
+                for movimiento in resultados:
+                    print(movimiento)
+
+        elif opcion == "6":
+
+            print("Gracias por usar FinTrack.")
+            break
+
+        else:
+            print("Opción inválida.")
+
+if __name__ == "__main__":
+    menu()
