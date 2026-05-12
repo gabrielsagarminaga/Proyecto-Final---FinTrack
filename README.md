@@ -57,3 +57,4 @@ python main.py
 - Valeria Steffes
 
 ## Link del repositorio
+https://github.com/gabrielsagarminaga/Proyecto-Final---FinTrack.git
