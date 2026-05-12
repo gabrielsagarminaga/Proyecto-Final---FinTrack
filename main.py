@@ -4,7 +4,10 @@ from src.operations import (
     agregar_movimiento,
     mostrar_movimientos,
     calcular_balance,
-    filtrar_por_categoria
+    filtrar_por_categoria,
+    resumen_por_categoria,
+    resumen_financiero,
+    mostrar_grafica_gastos
 )
 
 from src.utils import (
@@ -16,13 +19,18 @@ def menu():
 
     while True:
 
-        print("\n===== FINTRACK =====")
+        print("\n==============================")
+        print("         FINTRACK")
+        print("==============================")
         print("1. Agregar ingreso")
         print("2. Agregar gasto")
         print("3. Ver movimientos")
         print("4. Ver balance")
         print("5. Filtrar por categoría")
-        print("6. Salir")
+        print("6. Resumen por categoría")
+        print("7. Resumen financiero")
+        print("8. Mostrar gráfica de gastos")
+        print("9. Salir")
 
         opcion = input("Seleccione una opción: ")
 
@@ -40,7 +48,7 @@ def menu():
                 str(date.today())
             )
 
-            print("Ingreso agregado correctamente.")
+            print("\n✅ Ingreso agregado correctamente.")
 
         elif opcion == "2":
 
@@ -56,7 +64,7 @@ def menu():
                 str(date.today())
             )
 
-            print("Gasto agregado correctamente.")
+            print("\n✅ Gasto agregado correctamente.")
 
         elif opcion == "3":
 
@@ -102,11 +110,35 @@ def menu():
 
         elif opcion == "6":
 
-            print("Gracias por usar FinTrack.")
-            break
+            resumen = resumen_por_categoria()
+        
+            if not resumen:
+                print("\nNo hay gastos registrados.")
+
+            else:
+
+             print("\n===== RESUMEN DE GASTOS =====")
+
+            for categoria, total in resumen.items():
+                print(f"{categoria}: Q{total:.2f}")
+
+        elif opcion == "7":
+
+             resumen = resumen_financiero()
+
+             print("\n===== RESUMEN FINANCIERO =====")
+             print(f"Ingresos totales: Q{resumen['ingresos']:.2f}")
+             print(f"Gastos totales: Q{resumen['gastos']:.2f}")
+             print(f"Balance final: Q{resumen['balance']:.2f}")
+
+        elif opcion == "8":
+            mostrar_grafica_gastos()
+
+        elif opcion == "9":
+         print("\nGracias por usar FinTrack.")
+         break
 
         else:
-            print("Opción inválida.")
-
+            print("\n❌ Opción inválida.")
 if __name__ == "__main__":
     menu()
