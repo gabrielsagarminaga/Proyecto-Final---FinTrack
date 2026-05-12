@@ -67,7 +67,13 @@ def menu():
 
             else:
                 for movimiento in movimientos:
-                    print(movimiento)
+                    print("\n------------------------")
+                    print(f"Tipo: {movimiento['tipo']}")
+                    print(f"Monto: Q{movimiento['monto']}")
+                    print(f"Categoría: {movimiento['categoria']}")
+                    print(f"Descripción: {movimiento['descripcion']}")
+                    print(f"Fecha: {movimiento['fecha']}")
+                    print("------------------------")
 
         elif opcion == "4":
 
@@ -86,7 +92,13 @@ def menu():
 
             else:
                 for movimiento in resultados:
-                    print(movimiento)
+                    print("\n------------------------")
+                    print(f"Tipo: {movimiento['tipo']}")
+                    print(f"Monto: Q{movimiento['monto']}")
+                    print(f"Categoría: {movimiento['categoria']}")
+                    print(f"Descripción: {movimiento['descripcion']}")
+                    print(f"Fecha: {movimiento['fecha']}")
+                    print("------------------------")
 
         elif opcion == "6":
 
