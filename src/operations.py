@@ -13,7 +13,6 @@ def agregar_movimiento(tipo, monto, categoria, descripcion, fecha):
     )
 
     datos.append(nuevo_movimiento.__dict__)
-
     guardar_datos(datos)
 
 def mostrar_movimientos():
@@ -21,27 +20,30 @@ def mostrar_movimientos():
 
 def calcular_balance():
     datos = cargar_datos()
-
     balance = 0
 
     for movimiento in datos:
-
         if movimiento["tipo"] == "ingreso":
             balance += movimiento["monto"]
-
         elif movimiento["tipo"] == "gasto":
             balance -= movimiento["monto"]
 
     return balance
 
+def filtrar_por_categoria_recursivo(movimientos, categoria, indice=0, resultados=None):
+    if resultados is None:
+        resultados = []
+
+    if indice >= len(movimientos):
+        return resultados
+
+    movimiento = movimientos[indice]
+
+    if movimiento["categoria"].lower() == categoria.lower():
+        resultados.append(movimiento)
+
+    return filtrar_por_categoria_recursivo(movimientos, categoria, indice + 1, resultados)
+
 def filtrar_por_categoria(categoria):
     datos = cargar_datos()
-
-    resultados = []
-
-    for movimiento in datos:
-
-        if movimiento["categoria"].lower() == categoria.lower():
-            resultados.append(movimiento)
-
-    return resultados
+    return filtrar_por_categoria_recursivo(datos, categoria)
