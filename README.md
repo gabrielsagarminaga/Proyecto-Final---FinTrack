@@ -58,3 +58,5 @@ python main.py
 
 ## Link del repositorio
 https://github.com/gabrielsagarminaga/Proyecto-Final---FinTrack.git
+
+## Los Commits se realizaron todos desde una misma cuenta por que no se puedo conectar la otra cuenta al repositorio.

@@ -1,19 +1,5 @@
 [
     {
-        "tipo": "gasto",
-        "monto": 1500.0,
-        "categoria": "vestuario",
-        "descripcion": "Calzado para reunion",
-        "fecha": "2026-05-12"
-    },
-    {
-        "tipo": "gasto",
-        "monto": 2000.0,
-        "categoria": "Tecnologia",
-        "descripcion": "Amplificador de internet (Hogar)",
-        "fecha": "2026-05-12"
-    },
-    {
         "tipo": "ingreso",
         "monto": 12500.0,
         "categoria": "Salario",
@@ -21,45 +7,38 @@
         "fecha": "2026-05-12"
     },
     {
-        "tipo": "ingreso",
-        "monto": 2000.0,
-        "categoria": "freelance",
-        "descripcion": "Diseño de web EduGt",
-        "fecha": "2026-05-12"
-    },
-    {
         "tipo": "gasto",
-        "monto": 150.0,
-        "categoria": "Comida",
-        "descripcion": "Pizza",
-        "fecha": "2026-05-12"
-    },
-    {
-        "tipo": "gasto",
-        "monto": 600.0,
-        "categoria": "Transporte",
-        "descripcion": "Gasolina",
-        "fecha": "2026-05-12"
-    },
-    {
-        "tipo": "gasto",
-        "monto": 450.0,
-        "categoria": "Transporte",
-        "descripcion": "Reparacion del alternador del vehiculo",
-        "fecha": "2026-05-12"
-    },
-    {
-        "tipo": "gasto",
-        "monto": 100.0,
-        "categoria": "Comida",
-        "descripcion": "Sushi",
-        "fecha": "2026-05-12"
-    },
-    {
-        "tipo": "gasto",
-        "monto": 150.0,
+        "monto": 300.0,
         "categoria": "Entretenimiento",
         "descripcion": "Cine",
+        "fecha": "2026-05-12"
+    },
+    {
+        "tipo": "gasto",
+        "monto": 2500.0,
+        "categoria": "Inversion",
+        "descripcion": "Bolsa de valores",
+        "fecha": "2026-05-12"
+    },
+    {
+        "tipo": "gasto",
+        "monto": 6000.0,
+        "categoria": "Inversion",
+        "descripcion": "Criptomonedas",
+        "fecha": "2026-05-12"
+    },
+    {
+        "tipo": "ingreso",
+        "monto": 30000.0,
+        "categoria": "Salario",
+        "descripcion": "Sueldo Mensual",
+        "fecha": "2026-05-12"
+    },
+    {
+        "tipo": "gasto",
+        "monto": 3500.0,
+        "categoria": "Reparaciones",
+        "descripcion": "Reparacion de agujero en la puerta de la entrada",
         "fecha": "2026-05-12"
     }
 ]

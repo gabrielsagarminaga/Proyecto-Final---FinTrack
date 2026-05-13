@@ -27,7 +27,7 @@ def menu():
         print("3. Ver movimientos")
         print("4. Ver balance")
         print("5. Filtrar por categoría")
-        print("6. Resumen por categoría")
+        print("6. Resumen de gastos")
         print("7. Resumen financiero")
         print("8. Mostrar gráfica de gastos")
         print("9. Salir")
